@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A665242D-2710-4133-8F40-9563AD91F4F4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>raport</RootNamespace>
+    <AssemblyName>raport</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.10.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.10.1\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="FireSharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.2.0.4\lib\portable-net45+sl5+wp8+win8\FireSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="FireSharp.Serialization.JsonNet, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.Serialization.JsonNet.1.1.0\lib\net45\FireSharp.Serialization.JsonNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="firebase_connection\Connection.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\IdenSiswa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\IdenSiswa.Designer.cs">
+      <DependentUpon>IdenSiswa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\IdenGuru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\IdenGuru.Designer.cs">
+      <DependentUpon>IdenGuru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\IdenKepsek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\IdenKepsek.Designer.cs">
+      <DependentUpon>IdenKepsek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\idensek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\idensek.Designer.cs">
+      <DependentUpon>idensek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\IdentityOfSchool.cs" />
+    <Compile Include="model\Kelas.cs" />
+    <Compile Include="model\DataOrangTua.cs" />
+    <Compile Include="model\GuruModel.cs" />
+    <Compile Include="model\KepsekModel.cs" />
+    <Compile Include="model\Siswa.cs" />
+    <Compile Include="Murid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Murid.Designer.cs">
+      <DependentUpon>Murid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\viewGuruKelas\GuruKelas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewGuruKelas\GuruKelas.Designer.cs">
+      <DependentUpon>GuruKelas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewGuruAgama\GuruAgama_OlahRaga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewGuruAgama\GuruAgama_OlahRaga.Designer.cs">
+      <DependentUpon>GuruAgama_OlahRaga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewKepsek\KepalaSekolah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewKepsek\KepalaSekolah.Designer.cs">
+      <DependentUpon>KepalaSekolah.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\TataUsaha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\TataUsaha.Designer.cs">
+      <DependentUpon>TataUsaha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="register.Designer.cs">
+      <DependentUpon>register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\User.cs" />
+    <Compile Include="view\viewTataUsaha\KehadiranGuru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\KehadiranGuru.Designer.cs">
+      <DependentUpon>KehadiranGuru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\KKM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\KKM.Designer.cs">
+      <DependentUpon>KKM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\IdenWalidanStatusTinggal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\IdenWalidanStatusTinggal.Designer.cs">
+      <DependentUpon>IdenWalidanStatusTinggal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\IdenOrtu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewTataUsaha\IdenOrtu.Designer.cs">
+      <DependentUpon>IdenOrtu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewGuruKelas\Absensi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewGuruKelas\Absensi.Designer.cs">
+      <DependentUpon>Absensi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewGuruKelas\RekapNilai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewGuruKelas\RekapNilai.Designer.cs">
+      <DependentUpon>RekapNilai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewGuruKelas\NilaiKeterampilan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewGuruKelas\NilaiKeterampilan.Designer.cs">
+      <DependentUpon>NilaiKeterampilan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewGuruKelas\NilaiPengetahuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewGuruKelas\NilaiPengetahuan.Designer.cs">
+      <DependentUpon>NilaiPengetahuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\viewGuruKelas\NilaiSikap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\viewGuruKelas\NilaiSikap.Designer.cs">
+      <DependentUpon>NilaiSikap.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewTataUsaha\IdenSiswa.resx">
+      <DependentUpon>IdenSiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewTataUsaha\IdenGuru.resx">
+      <DependentUpon>IdenGuru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewTataUsaha\IdenKepsek.resx">
+      <DependentUpon>IdenKepsek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewTataUsaha\idensek.resx">
+      <DependentUpon>idensek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Murid.resx">
+      <DependentUpon>Murid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="view\viewGuruKelas\GuruKelas.resx">
+      <DependentUpon>GuruKelas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewGuruAgama\GuruAgama_OlahRaga.resx">
+      <DependentUpon>GuruAgama_OlahRaga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewKepsek\KepalaSekolah.resx">
+      <DependentUpon>KepalaSekolah.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewTataUsaha\TataUsaha.resx">
+      <DependentUpon>TataUsaha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="register.resx">
+      <DependentUpon>register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewTataUsaha\KehadiranGuru.resx">
+      <DependentUpon>KehadiranGuru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewTataUsaha\KKM.resx">
+      <DependentUpon>KKM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewTataUsaha\IdenWalidanStatusTinggal.resx">
+      <DependentUpon>IdenWalidanStatusTinggal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewTataUsaha\IdenOrtu.resx">
+      <DependentUpon>IdenOrtu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewGuruKelas\Absensi.resx">
+      <DependentUpon>Absensi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewGuruKelas\RekapNilai.resx">
+      <DependentUpon>RekapNilai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewGuruKelas\NilaiKeterampilan.resx">
+      <DependentUpon>NilaiKeterampilan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewGuruKelas\NilaiPengetahuan.resx">
+      <DependentUpon>NilaiPengetahuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\viewGuruKelas\NilaiSikap.resx">
+      <DependentUpon>NilaiSikap.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnClose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnRestore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tutwuri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kepsek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sikap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\knowledge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skills.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recapt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diploma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graduation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\presence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\standard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_siswa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_guru.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
